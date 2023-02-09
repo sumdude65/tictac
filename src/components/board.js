@@ -60,7 +60,8 @@ const Board = () => {
         dispatch({type:'NEW_GAME'})
     }
 
-    return (<>
+    return (
+    <div className="board">
     { !game.isEnded ? 
         game.gameBoard.map((cell,id)=>{
         {/* pass in the cell value in the game array, playerOne state, Ended state, and dispatch function
@@ -70,7 +71,7 @@ const Board = () => {
     }) :
         <EndCard result={game.result} newGame={newGame}/>
     }
-    </>)
+    </div>)
 }
 
 export default Board
